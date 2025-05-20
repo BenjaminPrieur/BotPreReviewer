@@ -1,0 +1,24 @@
+{
+  "originHash" : "2fae0668395fa4d60917cd655a35118885666556eefbd38d95a0dad724246a1f",
+  "pins" : [
+    {
+      "identity" : "ollama-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattt/ollama-swift.git",
+      "state" : {
+        "revision" : "b28bcb699e21ca4ed09dccb1ed326cbad1bddce3",
+        "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
+        "version" : "1.5.0"
+      }
+    }
+  ],
+  "version" : 3
+}
