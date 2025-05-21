@@ -37,6 +37,7 @@ struct ReviewerCLI: AsyncParsableCommand {
 
     while true {
       try await reviewMergeRequests(gitClient: gitClient)
+      print("🔄 Next review in \(interval) minutes...")
       try await Task.sleep(for: .seconds(interval * 60))
     }
   }

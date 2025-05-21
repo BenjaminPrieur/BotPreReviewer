@@ -2,17 +2,6 @@ import Ollama
 
 enum Reviewer {
   // swiftlint:disable line_length
-  // private static let basedPrompt = """
-  // You are a senior iOS engineer reviewing a merge request. Analyze the following Swift code diff carefully.
-  // •	Identify potential bugs, anti-patterns, or bad practices
-  // •	Suggest improvements in code structure, readability, and maintainability
-  // •	Highlight any missing edge case handling or test coverage gaps
-  // •	Follow best practices for Swift, SwiftUI, and modern iOS architecture
-  // •	Be concise, constructive, and direct
-
-  // Respond with specific feedback grouped by file or function if applicable. If the diff looks good, briefly acknowledge that.
-  // """
-
   private static let basedPrompt = """
     You are a senior iOS engineer responsible for conducting code reviews on Swift merge requests.
   Analyze the following Git diff (only Swift files). Provide actionable feedback that addresses the following criteria:
@@ -74,7 +63,7 @@ enum Reviewer {
   static func runOllama(diff: String) async throws -> String {
     let client = await Client.default
     let response = try await client.generate(
-      model: "llama3.2",
+      model: "codellama",
       prompt: "\(basedPrompt)\n\n\(diff)",
       options: ["temperature": 0.7]
     )
